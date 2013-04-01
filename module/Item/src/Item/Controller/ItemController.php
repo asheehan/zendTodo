@@ -1,11 +1,4 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 namespace Item\Controller;
 
@@ -21,9 +14,11 @@ class ItemController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel(array(
-        	'items' => $this->getItemTable()->fetchAll(),
-        	));
+        $view = new ViewModel(array(
+            'items' => $this->getItemTable()->fetchAll(),
+            ));
+
+        return $view;
     }
 
     // add a new item via our form
@@ -101,7 +96,7 @@ class ItemController extends AbstractActionController
     			$this->getItemTable()->deleteItem($id);
     		}
 
-            // Redirect to list of albums
+            // Redirect to list of items
     		return $this->redirect()->toRoute('item');
     	}
 
@@ -109,6 +104,25 @@ class ItemController extends AbstractActionController
     		'id'    => $id,
     		'item' => $this->getItemTable()->getItem($id)
     		);
+    }
+
+    public function groupDeleteAction()
+    {
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $del = $request->getPost('groupDelete');
+            if (count($del) == 0){ // no deletions selected
+                return $this->redirect()->toRoute('groupDelete'));
+            }
+            $this->getItemTable()->deleteItems($del);
+            // Redirect to list of items
+            return $this->redirect()->toRoute('item');
+        }
+
+        return array(
+            'id'    => $id,
+            'item' => $this->getItemTable()->getItem($id)
+            );
     }
 
     // retrieve our itemTable

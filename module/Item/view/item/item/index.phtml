@@ -1,16 +1,15 @@
 <div class="hero-unit">
+  
   <h2>TODO</h2>
   <p>
     <a href="<?php echo $this->url('item', array('action'=>'add'));?>">Add new Todo</a>
   </p>
   <table class="table">
-    <tr>
-      <th>Id</th>
-      <th>Content</th>
-    </tr>
+ 
+    <form name="items" action="<?php echo $this->url('item', array('action'=>'groupDelete'));?>" method="post">
     <?php foreach ($items as $item) : ?>
     <tr>
-      <td><?php echo $this->escapeHtml($item->id);?></td>
+      <td><input type="checkbox" name="groupDelete[]" value="<?php echo $item->id;?>" /></td>
       <td><?php echo $this->escapeHtml($item->content);?></td>
       <td>
         <a href="<?php echo $this->url('item', array('action'=>'edit','id'=>$item->id));?>">Edit</a>
@@ -18,5 +17,7 @@
       </td>
     </tr>
   <?php endforeach; ?>
-  </table>   
+  <input type="submit" value="Delete selected" onclick="validate()" />
+  </form>
+  </table>
 </div>

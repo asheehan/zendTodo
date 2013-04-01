@@ -56,4 +56,12 @@ class ItemTable
 	{
 		$this->tableGateway->delete(array('id' => $id));
 	}
+
+	public function deleteItems($ids)
+	{
+		foreach ($ids as $id) {
+			$this->tableGateway->delete(array('id' => $id));
+		}
+	}
+
 }

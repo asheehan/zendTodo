@@ -3,6 +3,7 @@
 namespace Item\Form;
 
 use Zend\Form\Form;
+use Zend\Form\Element;
 
 class ItemForm extends Form
 {
@@ -24,7 +25,7 @@ class ItemForm extends Form
 				'type' => 'text',
 				),
 			'options' => array(
-				'label' => 'Content'
+				'label' => 'Content: '
 				),
 			));
 
@@ -36,5 +37,6 @@ class ItemForm extends Form
 				'id' => 'submitbutton',
 				),
 			));
+
 	}
 }
