@@ -1,6 +1,6 @@
 <h3>Installation</h3>
 
-<p>You must have the LAMP stack installed. A simple download and install of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> should suffice (but any directory with appropriate .</p>
+<p>You must have Apache, MySQL, and PHP installed. A simple download and install of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> may be the fastest method to get started, but other setups will work as well.</p>
 
 <p>Checkout this project in the xampp/htdocs directory, and install the depencies:<br />
     <code>git clone git://github.com/asheehan/zendTodo.git zendTodo</code><br />
@@ -11,8 +11,11 @@
 <p>
     Setup the MySQL database and user by running: <br />
     <code>
-        CREATE DATABASE zend_todo;<br />
-        grant all on zend_todo.* to zend_user@localhost identified by 'longcat';<br />
+        GRANT ALL ON *.* TO zend_user@localhost IDENTIFIED BY 'longcat';<br />
+    </code>
+    From the commandline we can now import tables/data (file is located in the root directory of the git project: <br />
+    <code>
+        mysql -u zend_user -p < zend_todo.sql
     </code>
 </p>
 
@@ -20,7 +23,7 @@
 <p>Modify your apache vhosts (default for xampp is xampp/apache/conf/extra/http-vhosts.conf) to point to zendTodo/public
     <code>
         &lt;VirtualHost *:80&gt;<br />
-            DocumentRoot "C:\xampp\htdocs\zendTodo\public"<br />
+            %DocumentRoot "C:\xampp\htdocs\zendTodo\public"<br />
             ServerName zendTodo<br />
             ServerAlias zendTodo<br />
             &lt;Directory "C:\xampp\xampp\htdocs\zendTodo\public"&gt;<br />
@@ -29,6 +32,10 @@
             &lt;/Directory&gt;<br />
         &lt;VirtualHost&gt;<br />
     </code>
+</p>
+
+<p>
+    Restart apache and point your browser to http://zendTodo (you can also modify your /etc/hosts to have zendTodo resolve without the need for http://)
 </p>
 
 <h3>Project Objective</h3>
