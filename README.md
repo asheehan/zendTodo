@@ -1,4 +1,10 @@
-Objective
+<h3>Installation</h3>
+
+<p>You must have installed the LAMP stack. A simple download of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> should suffice.</p>
+
+
+
+<h3>Project Objective</h3>
 
 Create a simple “TO-DO List” web application, based on the Zend Framework, which
 demonstrates knowledge of object-oriented PHP best practices and an understanding of the
