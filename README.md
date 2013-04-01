@@ -15,7 +15,7 @@
     </code>
     From the commandline we can now import tables/data (file is located in the root directory of the git project: <br />
     <code>
-        mysql -u zend_user -p < zend_todo.sql
+        mysql -u zend_user -p &lt; zend_todo.sql
     </code>
 </p>
 
@@ -35,8 +35,10 @@
 </p>
 
 <p>
-    Restart apache and point your browser to http://zendTodo (you can also modify your /etc/hosts to have zendTodo resolve without the need for http://)
+    Restart apache and point your browser to <a href="http://zendTodo">http://zendTodo</a> (you can also modify your /etc/hosts to have zendTodo resolve without the need for http://)
 </p>
+
+<hr />
 
 <h3>Project Objective</h3>
 
