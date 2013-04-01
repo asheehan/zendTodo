@@ -1,8 +1,23 @@
 <h3>Installation</h3>
 
-<p>You must have installed the LAMP stack. A simple download of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> should suffice.</p>
+<p>You must have the LAMP stack installed. A simple download and install of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> should suffice (but any directory with appropriate .</p>
 
+<p>Checkout this project in the xampp/htdocs directory. <code>git clone git://github.com/asheehan/zendTodo.git zendTodo</code>
+</p>
 
+<p>Modify your apache vhosts (default for xampp is xampp/apache/conf/extra/http-vhosts.conf) to point to zendTodo/public
+    <code>
+        <VirtualHost *:80>
+            DocumentRoot "C:\xampp\htdocs\zendTodo\public"
+            ServerName zendTodo
+            ServerAlias zendTodo
+            <Directory "C:\xampp\xampp\htdocs\zendTodo\public">
+                Order allow,deny
+                Allow from all
+            </Directory>
+        </VirtualHost>
+    </code>
+</p>
 
 <h3>Project Objective</h3>
 
