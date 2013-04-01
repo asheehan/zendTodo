@@ -2,10 +2,13 @@
 
 <p>You must have Apache, MySQL, and PHP installed. A simple download and install of <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> may be the fastest method to get started, but other setups will work as well.</p>
 
-<p>Checkout this project in the xampp/htdocs directory, and install the depencies by running the following:<br />
+<p>Checkout this project in the xampp/htdocs directory and install the depencies by running the following:<br />
     <code>git clone git://github.com/asheehan/zendTodo.git zendTodo</code><br />
+    <!-- no longer needed after removing zendFramework's .gitignore I don't like this, though -->
+    <!--
     <code>php composer.phar self-update</code><br />
-    <code> php composer.phar install</code>
+    <code>php composer.phar install</code>
+-->
 </p>
 
 <p>
