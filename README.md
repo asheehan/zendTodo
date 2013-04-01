@@ -6,9 +6,10 @@ MVC design pattern (as implemented in Zend Framework).
 
 Functional requirements
 
-1   On the main page, a TO-DO List containing a list of items should be displayed. Each
+<ol>
+<li>On the main page, a TO-DO List containing a list of items should be displayed. Each
 item in this list should be displayed with a checkbox, Edit link, and Delete link alongside
-it.
+it.</li>
 2   The TO-DO list should be loaded from a database each time this page is accessed.
 3   Below the form, an “Add New TO-DO” button should be displayed.
 4   Below the form, a “Delete Selected” button should be displayed. Clicking this button
@@ -21,6 +22,7 @@ Save button. If an Edit link was clicked to get to this page, the text field sho
 populated with the TO-DO item associated with that Edit link.
 6   Clicking the Save button on the Add/Edit form should either save the contents of the text
 field as a new TO-DO item (if adding) or update the existing TO-DO item (if editing).
+<ol>
 
 Architectural requirements
 
