@@ -19,15 +19,15 @@
 
 <p>Modify your apache vhosts (default for xampp is xampp/apache/conf/extra/http-vhosts.conf) to point to zendTodo/public
     <code>
-        <VirtualHost *:80><br />
+        &lt;VirtualHost *:80&gt;<br />
             DocumentRoot "C:\xampp\htdocs\zendTodo\public"<br />
             ServerName zendTodo<br />
             ServerAlias zendTodo<br />
-            <Directory "C:\xampp\xampp\htdocs\zendTodo\public"><br />
+            &lt;Directory "C:\xampp\xampp\htdocs\zendTodo\public"&gt;<br />
                 Order allow,deny<br />
                 Allow from all<br />
-            </Directory><br />
-        </VirtualHost><br />
+            &lt;/Directory&gt;<br />
+        &lt;VirtualHost&gt;<br />
     </code>
 </p>
 
