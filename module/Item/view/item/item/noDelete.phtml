@@ -3,11 +3,6 @@
   <p>
     <a href="<?php echo $this->url('item', array('action'=>'add'));?>">Add new Todo</a>
   </p>
-  <?php
-    if (!empty($_GET) && $_GET['fail']) {
-      echo "<p>No items selected</p>";
-    }
-    ?>
   <table class="table">
  
     <form name="items" action="<?php echo $this->url('item', array('action'=>'groupDelete'));?>" method="post">

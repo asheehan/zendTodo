@@ -112,7 +112,9 @@ class ItemController extends AbstractActionController
         if ($request->isPost()) {
             $del = $request->getPost('groupDelete');
             if (count($del) == 0){ // no deletions selected
-                return $this->redirect()->toRoute('groupDelete'));
+                $url = $this->url()->fromRoute('item');
+                $url .= '?fail=1';
+                return $this->redirect()->toUrl($url);
             }
             $this->getItemTable()->deleteItems($del);
             // Redirect to list of items
