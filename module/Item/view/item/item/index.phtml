@@ -3,13 +3,14 @@
   <p>
     <a href="<?php echo $this->url('item', array('action'=>'add'));?>">Add new Todo</a>
   </p>
-  <?php
+  <?php // validation on bulkDelete
     if (!empty($_GET) && $_GET['fail']) {
       echo "<p>No items selected</p>";
     }
     ?>
   <table class="table">
  
+    <!-- allow users to delete selected terms -->
     <form name="items" action="<?php echo $this->url('item', array('action'=>'groupDelete'));?>" method="post">
     <?php foreach ($items as $item) : ?>
     <tr>
@@ -21,7 +22,7 @@
       </td>
     </tr>
   <?php endforeach; ?>
-  <input type="submit" value="Delete selected" onclick="validate()" />
+  <input type="submit" value="Delete selected" />
   </form>
   </table>
 </div>

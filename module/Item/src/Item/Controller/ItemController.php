@@ -79,6 +79,7 @@ class ItemController extends AbstractActionController
     		);
     }
 
+    // delete given item after confirmation
     public function deleteAction()
     {
     	$id = (int) $this->params()->fromRoute('id', 0);
@@ -106,6 +107,7 @@ class ItemController extends AbstractActionController
     		);
     }
 
+    // bulk delete method, if called with no POSTed ids, returns fail to item
     public function groupDeleteAction()
     {
         $request = $this->getRequest();
@@ -116,8 +118,9 @@ class ItemController extends AbstractActionController
                 $url .= '?fail=1';
                 return $this->redirect()->toUrl($url);
             }
+
+            // delete items and redirect to itemTable
             $this->getItemTable()->deleteItems($del);
-            // Redirect to list of items
             return $this->redirect()->toRoute('item');
         }
 

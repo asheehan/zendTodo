@@ -12,6 +12,8 @@ class ItemForm extends Form
 	{
 		parent::__construct('item');
 		$this->setAttribute('method', 'post');
+
+		// id element, hidden from users
 		$this->add(array(
 			'name' => 'id',
 			'attributes' => array(
@@ -19,6 +21,7 @@ class ItemForm extends Form
 				),
 			));
 
+		// content element, displayed prominently
 		$this->add(array(
 			'name' => 'content',
 			'attributes' => array(
@@ -29,14 +32,14 @@ class ItemForm extends Form
 				),
 			));
 
+		// submit button
 		$this->add(array(
 			'name' => 'submit',
 			'attributes' => array(
 				'type' => 'submit',
-				'value' => 'Go',
+				'value' => 'Save',
 				'id' => 'submitbutton',
 				),
 			));
-
 	}
 }
